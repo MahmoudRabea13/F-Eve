@@ -2,6 +2,7 @@ import gradio as gr
 from functions import load_models, extract_and_preprocess_faces, predict_age, predict_gender, match_faces
 from PIL import Image
 import tempfile
+import math
 
 # Load models
 AGE_MODEL_PATH = "vgg_age.h5"
@@ -26,8 +27,8 @@ def analyze_faces(img1, img2, criteria_thresh, cos_thresh, eucl_thresh, angle_th
         emoji2 = "👨" if gender2 == "Male" else "👩"
         summary = f"""
         <div style='text-align:center; font-weight:bold; color:#0A4D68; font-size:16px;'>
-         Face 1 → Age: {age1:.1f}, Gender: {gender1} {emoji1} <br>
-         Face 2 → Age: {age2:.1f}, Gender: {gender2} {emoji2} <br><br>
+         Face 1 → Age: {math.ceil(age1)}, Gender: {gender1} {emoji1} <br>
+         Face 2 → Age: {math.ceil(age2)}, Gender: {gender2} {emoji2} <br><br>
         🧠 <u>Matching</u><br>
         • Cosine Similarity: {match_result['cos_sim']:.4f} (>{cos_thresh})<br>
         • Euclidean Distance: {match_result['eucl_dist']:.4f} (<{eucl_thresh})<br>
