@@ -57,7 +57,7 @@ F-Eve/
 │   ├── Train.ipynb            # Training age model
 │   └── Test.ipynb             # Testing age model
 ├── assets/                # Example images and demo               
-└── README.md              # Project documentation
+└── README.md              
 ```
 </div>
 
