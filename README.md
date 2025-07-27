@@ -93,6 +93,10 @@ F-Eve/
    - Upload two face images
    - Adjust matching criteria (cosine, euclidean, angle thresholds)
    - View age, gender, and match results in real time
+  
+<p align="center">
+   <img src="assets/pipeline.png" alt="F-Eve Demo" />
+</p>
 
 </div>
 
